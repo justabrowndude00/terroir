@@ -3,9 +3,12 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  renderNavigation();
-  renderFilterTabs();
-  renderBlogGrid('All');
+  if (document.getElementById('filter-tabs')) {
+    renderFilterTabs();
+  }
+  if (document.getElementById('blog-grid')) {
+    renderBlogGrid('All');
+  }
 
   // Handle Filtering
   document.getElementById('filter-tabs').addEventListener('click', (e) => {
@@ -21,13 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-function renderNavigation() {
-  const navContainer = document.getElementById('nav-links');
-  // Just putting the core categories into the nav
-  const navItems = ["The Archive", "Designers", "Textiles", "About Us"];
-  
-  navContainer.innerHTML = navItems.map(item => `<a href="#">${item}</a>`).join('');
-}
 
 function renderFilterTabs() {
   const container = document.getElementById('filter-tabs');
@@ -72,3 +68,28 @@ function renderBlogGrid(filterCategory) {
     </article>
   `).join('');
 }
+
+// Newsletter Logic
+function setupNewsletter() {
+  const submitButtons = document.querySelectorAll('[id^="newsletter-submit"]');
+  
+  submitButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      // Find the associated email input
+      const container = btn.closest('.newsletter-form');
+      const emailInput = container.querySelector('input[type="email"]');
+      
+      if (emailInput && emailInput.value) {
+        // Mock successful subscription
+        alert(`Thank you for subscribing to the Terroir Dispatch with ${emailInput.value}!`);
+        emailInput.value = '';
+      } else {
+        alert('Please enter a valid email address.');
+      }
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', setupNewsletter);

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Designers | terroir</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .directory-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+    .designer-card {
+      border: 1px solid var(--border);
+      padding: 40px;
+      background: #fff;
+      transition: var(--transition);
+    }
+    .designer-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+    .designer-card h3 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .designer-card .origin {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-light);
+      margin-bottom: 24px;
+      display: block;
+    }
+    .designer-card p {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+    }
+  </style>
+</head>
+<body>
+  
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <a href="index.html" class="logo-text">terroir</a>
+      </div>
+      <nav class="nav-links">
+        <a href="archive.html">The Archive</a>
+        <a href="designers.html" class="active">Designers</a>
+        <a href="manifesto.html">Manifesto</a>
+        <a href="about.html">About Us</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="#" class="btn btn-outline">Subscribe</a>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: 60px;">
+    <section class="blog-section">
+      <div class="blog-header">
+        <div class="blog-title">
+          <h2>Support Global Artisans</h2>
+          <p>Direct your funding to the communities whose heritage is continually mined for the runway.<br>Discover verified authentic artisanal houses.</p>
+        </div>
+      </div>
+
+      <div class="directory-grid">
+        <div class="designer-card">
+          <h3>Ginew</h3>
+          <span class="origin">Native American Owned (Ojibwe, Oneida, Mohican)</span>
+          <p>The first Native American-owned denim collection. They incorporate family symbols and teachings into their garments, utilizing natural materials like selvedge denim and Pendleton wool blanket fabric.</p>
+          <a href="#" class="btn btn-outline">Explore Craft</a>
+        </div>
+        <div class="designer-card">
+          <h3>B. Yellowtail</h3>
+          <span class="origin">Northern Cheyenne Nation</span>
+          <p>Founded by Bethany Yellowtail, this brand prioritizes authentic Indigenous design, community, and culture. They offer intricately patterned apparel made by a collective of Native American artisans.</p>
+          <a href="#" class="btn btn-outline">Explore Craft</a>
+        </div>
+        <div class="designer-card">
+          <h3>Eighth Generation</h3>
+          <span class="origin">Snoqualmie Tribe</span>
+          <p>The first Indigenous-owned brand to produce Native-designed wool blankets. They provide an authentic and ethical alternative to appropriated products, supporting Native artistry directly.</p>
+          <a href="#" class="btn btn-outline">Explore Craft</a>
+        </div>
+        <div class="designer-card">
+          <h3>Kirrikin</h3>
+          <span class="origin">Indigenous Australian (Wonnarua)</span>
+          <p>An Australian luxury resortwear brand featuring authentic artworks from contemporary Indigenous Australian artists, established as a social enterprise to uplift First Nations creators.</p>
+          <a href="#" class="btn btn-outline">Explore Craft</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-text">terroir</span>
+        </div>
+        <p>Critiquing the fashion canon through a decolonial lens.</p>
+      </div>
+      <!-- Footer content similar to others omitted for brevity, keeping newsletter -->
+      <div class="footer-newsletter">
+        <h4>The Weekly Dispatch</h4>
+        <div class="newsletter-form">
+          <input type="email" id="newsletter-email-designers" placeholder="Email address" required>
+          <button type="button" id="newsletter-submit-designers" class="btn btn-primary">Subscribe</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js?v=3"></script>
+</body>
+</html>

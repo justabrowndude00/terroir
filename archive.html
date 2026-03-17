@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Archive | terroir</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <a href="index.html" class="logo-text">terroir</a>
+      </div>
+      <nav class="nav-links">
+        <a href="archive.html" class="active">The Archive</a>
+        <a href="designers.html">Designers</a>
+        <a href="manifesto.html">Manifesto</a>
+        <a href="about.html">About Us</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="#" class="btn btn-outline">Subscribe</a>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: 60px;">
+    <section class="blog-section">
+      <div class="blog-header">
+        <div class="blog-title">
+          <h2>The Archive</h2>
+          <p>Documenting the uncredited historical origins of runway aesthetics.</p>
+        </div>
+      </div>
+      <div class="blog-controls">
+        <div class="filter-tabs" id="filter-tabs">
+          <!-- Filled by JS -->
+        </div>
+      </div>
+      <div class="blog-grid" id="blog-grid">
+        <!-- Filled by JS -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-text">terroir</span>
+        </div>
+        <p>Critiquing the fashion canon through a decolonial lens. We aim to return visibility to the original creators of the world's most replicated designs.</p>
+      </div>
+      <div class="footer-links">
+        <div class="link-group">
+          <h4>Explore</h4>
+          <a href="archive.html">The Archive</a>
+          <a href="manifesto.html">Manifesto</a>
+        </div>
+        <div class="link-group">
+          <h4>Connect</h4>
+          <a href="#">Contact Editorial</a>
+          <a href="#">Submit a Tip</a>
+        </div>
+      </div>
+      <div class="footer-newsletter">
+        <h4>The Weekly Dispatch</h4>
+        <div class="newsletter-form">
+          <input type="email" id="newsletter-email-footer" placeholder="Email address" required>
+          <button type="button" id="newsletter-submit-footer" class="btn btn-primary">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 terroir. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="data.js?v=2"></script>
+  <script src="script.js?v=3"></script>
+</body>
+</html>

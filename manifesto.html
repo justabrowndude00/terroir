@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manifesto | terroir</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .manifesto-section {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px;
+    }
+    .manifesto-content {
+      max-width: 900px;
+    }
+    .manifesto-quote {
+      font-family: var(--font-serif);
+      font-size: 3.5rem;
+      line-height: 1.2;
+      color: var(--primary);
+      margin-bottom: 24px;
+      font-style: italic;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1.5s ease forwards;
+    }
+    .manifesto-author {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--text-light);
+      opacity: 0;
+      animation: fadeIn 1s ease 1s forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .manifesto-quote {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <a href="index.html" class="logo-text">terroir</a>
+      </div>
+      <nav class="nav-links">
+        <a href="archive.html">The Archive</a>
+        <a href="designers.html">Designers</a>
+        <a href="manifesto.html" class="active">Manifesto</a>
+        <a href="about.html">About Us</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="#" class="btn btn-outline">Subscribe</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="manifesto-section">
+      <div class="manifesto-content">
+        <h1 class="manifesto-quote">"True luxury is found in the soil, the hands that weave the thread, and the uncredited histories woven into every silhouette. We dress to remember."</h1>
+        <p class="manifesto-author">— The Terroir Mission Statement</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js?v=3"></script>
+</body>
+</html>
