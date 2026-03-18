@@ -853,3 +853,39 @@ main {
     font-size: 1.5rem;
   }
 }
+
+/* Mobile Navigation Additions */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  padding: 8px;
+}
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav-actions .btn {
+    display: none !important;
+  }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--background);
+    flex-direction: column;
+    padding: 24px 40px;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    gap: 20px;
+  }
+  .navbar .nav-links.active {
+    display: flex !important;
+  }
+}
