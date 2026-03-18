@@ -11,22 +11,29 @@
   <style>
     .directory-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 40px;
+      grid-template-columns: 1fr;
+      gap: 60px;
       margin-top: 60px;
     }
     .designer-card {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 60px;
+      align-items: center;
       border: 1px solid var(--border);
-      padding: 40px;
+      padding: 0;
       background: #fff;
       transition: var(--transition);
+      overflow: hidden;
+    }
+    .designer-info {
+      padding: 60px;
     }
     .designer-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.06);
     }
     .designer-card h3 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin-bottom: 12px;
     }
     .designer-card .origin {
@@ -39,8 +46,72 @@
     }
     .designer-card p {
       font-family: var(--font-serif);
-      font-size: 1.1rem;
-      margin-bottom: 32px;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      margin-bottom: 40px;
+      color: var(--text-main);
+    }
+    .carousel {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 500px;
+      overflow: hidden;
+    }
+    .carousel-track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .carousel-slide {
+      min-width: 100%;
+      height: 100%;
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #FFF;
+      color: var(--primary);
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      opacity: 0;
+      transition: var(--transition);
+      border: 1px solid var(--border);
+    }
+    .carousel:hover .carousel-btn {
+      opacity: 1;
+    }
+    .carousel-btn:hover {
+      background: var(--primary);
+      color: #FFF;
+    }
+    .carousel-btn.prev {
+      left: 20px;
+    }
+    .carousel-btn.next {
+      right: 20px;
+    }
+    @media (max-width: 900px) {
+      .designer-card {
+        grid-template-columns: 1fr;
+      }
+      .carousel {
+        min-height: 400px;
+      }
+      .designer-info {
+        padding: 40px;
+      }
     }
   </style>
 </head>
@@ -73,30 +144,77 @@
       </div>
 
       <div class="directory-grid">
+        
         <div class="designer-card">
-          <h3>Ginew</h3>
-          <span class="origin">Native American Owned (Ojibwe, Oneida, Mohican)</span>
-          <p>The first Native American-owned denim collection. They incorporate family symbols and teachings into their garments, utilizing natural materials like selvedge denim and Pendleton wool blanket fabric.</p>
-          <a href="#" class="btn btn-outline">Explore Craft</a>
+          <div class="designer-info">
+            <h3>Ginew</h3>
+            <span class="origin">Native American Owned (Ojibwe, Oneida, Mohican)</span>
+            <p>The first Native American-owned denim collection. They incorporate family symbols and teachings into their garments, utilizing natural materials like selvedge denim and Pendleton wool blanket fabric.</p>
+            <a href="https://ginewusa.com" target="_blank" class="btn btn-outline">Explore Craft</a>
+          </div>
+          <div class="carousel">
+            <div class="carousel-track">
+              <div class="carousel-slide"><img src="https://ginewusa.com/cdn/shop/files/front_back_chore_coat_product.jpg?v=1762492193&width=1080" alt="Ginew Coat"></div>
+              <div class="carousel-slide"><img src="https://ginewusa.com/cdn/shop/files/Indigo_Barn_duo_image.jpg?v=1759204729&width=1080" alt="Ginew Barn Coat"></div>
+              <div class="carousel-slide"><img src="https://ginewusa.com/cdn/shop/files/Sitting_Bull_Blanket_hung_over_tree_product.jpg?v=1764560500&width=1080" alt="Ginew Blanket"></div>
+            </div>
+            <button class="carousel-btn prev" aria-label="Previous image">&#10094;</button>
+            <button class="carousel-btn next" aria-label="Next image">&#10095;</button>
+          </div>
         </div>
+
         <div class="designer-card">
-          <h3>B. Yellowtail</h3>
-          <span class="origin">Northern Cheyenne Nation</span>
-          <p>Founded by Bethany Yellowtail, this brand prioritizes authentic Indigenous design, community, and culture. They offer intricately patterned apparel made by a collective of Native American artisans.</p>
-          <a href="#" class="btn btn-outline">Explore Craft</a>
+          <div class="designer-info">
+            <h3>B. Yellowtail</h3>
+            <span class="origin">Northern Cheyenne Nation</span>
+            <p>Founded by Bethany Yellowtail, this brand prioritizes authentic Indigenous design, community, and culture. They offer intricately patterned apparel made by a collective of Native American artisans.</p>
+            <a href="https://byellowtail.com" target="_blank" class="btn btn-outline">Explore Craft</a>
+          </div>
+          <div class="carousel">
+            <div class="carousel-track">
+              <div class="carousel-slide"><img src="https://byellowtail.com/cdn/shop/files/BYELLOWTAIL_SPRING_2024_MaxiStarQuiltDress-Teal-12_1000x.jpg?v=1711681481" alt="B. Yellowtail Dress"></div>
+              <div class="carousel-slide"><img src="https://byellowtail.com/cdn/shop/files/BYELLOWTAIL_SPRING_2024_7PleatedMidiSkirt-Teal_x800.jpg?v=1758834449" alt="B. Yellowtail Skirt"></div>
+              <div class="carousel-slide"><img src="https://byellowtail.com/cdn/shop/files/BRAVE-STAR-SILK-SCARF-BYELLOWTAIL-1_x800.jpg?v=1758899693" alt="B. Yellowtail Scarf"></div>
+            </div>
+            <button class="carousel-btn prev" aria-label="Previous image">&#10094;</button>
+            <button class="carousel-btn next" aria-label="Next image">&#10095;</button>
+          </div>
         </div>
+
         <div class="designer-card">
-          <h3>Eighth Generation</h3>
-          <span class="origin">Snoqualmie Tribe</span>
-          <p>The first Indigenous-owned brand to produce Native-designed wool blankets. They provide an authentic and ethical alternative to appropriated products, supporting Native artistry directly.</p>
-          <a href="#" class="btn btn-outline">Explore Craft</a>
+          <div class="designer-info">
+            <h3>Eighth Generation</h3>
+            <span class="origin">Snoqualmie Tribe</span>
+            <p>The first Indigenous-owned brand to produce Native-designed wool blankets. They provide an authentic and ethical alternative to appropriated products, supporting Native artistry directly.</p>
+            <a href="https://eighthgeneration.com" target="_blank" class="btn btn-outline">Explore Craft</a>
+          </div>
+          <div class="carousel">
+            <div class="carousel-track">
+              <div class="carousel-slide"><img src="https://eighthgeneration.com/cdn/shop/files/GrandBlessingWoolBlanket8_800x.jpg" alt="Eighth Generation Blanket"></div>
+            </div>
+            <button class="carousel-btn prev" style="display:none;" aria-label="Previous image">&#10094;</button>
+            <button class="carousel-btn next" style="display:none;" aria-label="Next image">&#10095;</button>
+          </div>
         </div>
+
         <div class="designer-card">
-          <h3>Kirrikin</h3>
-          <span class="origin">Indigenous Australian (Wonnarua)</span>
-          <p>An Australian luxury resortwear brand featuring authentic artworks from contemporary Indigenous Australian artists, established as a social enterprise to uplift First Nations creators.</p>
-          <a href="#" class="btn btn-outline">Explore Craft</a>
+          <div class="designer-info">
+            <h3>Kirrikin</h3>
+            <span class="origin">Indigenous Australian (Wonnarua)</span>
+            <p>An Australian luxury resortwear brand featuring authentic artworks from contemporary Indigenous Australian artists, established as a social enterprise to uplift First Nations creators.</p>
+            <a href="https://kirrikin.com" target="_blank" class="btn btn-outline">Explore Craft</a>
+          </div>
+          <div class="carousel">
+            <div class="carousel-track">
+              <div class="carousel-slide"><img src="https://kirrikin.com/cdn/shop/files/Kirrikin-February-Full-Quality-303.jpg?v=1773389048&width=1080" alt="Kirrikin Dress"></div>
+              <div class="carousel-slide"><img src="https://kirrikin.com/cdn/shop/files/2024.09.20.SEP_KirrikinGoolugatupShoot.lo-res-67.jpg?v=1728261194&width=1080" alt="Kirrikin Resortwear"></div>
+              <div class="carousel-slide"><img src="https://kirrikin.com/cdn/shop/files/2024.09.20.SEP_KirrikinGoolugatupShoot.lo-res-36.jpg?v=1728262668&width=1080" alt="Kirrikin Scarf"></div>
+            </div>
+            <button class="carousel-btn prev" aria-label="Previous image">&#10094;</button>
+            <button class="carousel-btn next" aria-label="Next image">&#10095;</button>
+          </div>
         </div>
+
       </div>
     </section>
   </main>

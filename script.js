@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('blog-grid')) {
     renderBlogGrid('All');
   }
+  setupCarousels();
 
   // Handle Filtering
   document.getElementById('filter-tabs').addEventListener('click', (e) => {
@@ -88,6 +89,37 @@ function setupNewsletter() {
       } else {
         alert('Please enter a valid email address.');
       }
+    });
+  });
+}
+
+// Carousel Logic
+function setupCarousels() {
+  const carousels = document.querySelectorAll('.carousel');
+  
+  carousels.forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const nextBtn = carousel.querySelector('.carousel-btn.next');
+    const prevBtn = carousel.querySelector('.carousel-btn.prev');
+    
+    if (!track || slides.length <= 1) return;
+    
+    let currentIndex = 0;
+    
+    const updateCarousel = () => {
+      // 100% width per slide
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    };
+    
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    });
+    
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateCarousel();
     });
   });
 }
